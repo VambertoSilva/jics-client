@@ -1,0 +1,53 @@
+{
+  "name": "jics-server",
+  "version": "1.0.0",
+  "description": "Server for JICS",
+  "type": "module",
+  "main": "src/server.js",
+  "imports": {
+    "#routes/*": "./src/routes/*",
+    "#middlewares/*": "./src/middlewares/*",
+    "#controllers/*": "./src/controllers/*",
+    "#errors/*": "./src/errors/*",
+    "#utils/*": "./src/utils/*",
+    "#services/*": "./src/services/*"
+  },
+  "scripts": {
+    "main": "src/server.js",
+    "dev": "nodemon src/server.js",
+    "lint": "eslint src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gvinfinity/jics-server.git"
+  },
+  "keywords": [
+    "server",
+    "jics",
+    "sports",
+    "management"
+  ],
+  "private": true,
+  "author": "JICS Comission",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Gvinfinity/jics-server/issues"
+  },
+  "homepage": "https://github.com/Gvinfinity/jics-server#readme",
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.7.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nodemon": "^2.0.21",
+    "prettier": "^2.8.4"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.11.0",
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0"
+  }
+}
