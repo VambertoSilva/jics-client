@@ -2,6 +2,7 @@
   "name": "jics-server",
   "version": "1.0.0",
   "description": "Server for JICS",
+  "proxy": "http://localhost:3000",
   "type": "module",
   "main": "src/server.js",
   "imports": {

@@ -1,0 +1,23 @@
+.headervolei{
+margin-top:4rem;
+margin-bottom:0.2rem;
+font-size: 1.2rem;
+}
+
+.divider{
+    height:1px;
+    width:100%;
+    background-color: rgb(75, 75, 75);
+}
+
+.sexo{
+    margin-top:2rem;
+}
+
+.label{
+    margin-left:0.4rem;
+}
+
+.SecondInput{
+    margin-left:2rem;
+}

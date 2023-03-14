@@ -1,0 +1,30 @@
+@font-face {
+  font-family: Designer;
+  src: url("../public/Fonts/Designer.otf");
+}
+
+.container{
+  width:80%;
+  min-height:80vh;
+  margin: 6rem auto 0 auto;
+  background-color:#F3F3F3;
+  border-radius: 1rem;
+  display:block;
+}
+.mainTitle{
+  text-align:center;
+  padding-top: 2rem;
+  font-family: Designer;
+  font-weight: 1;
+  font-size:3.5rem;
+  margin-bottom: 0;;
+}
+
+.mainSubtitle{
+  text-align:center;
+  font-family: Designer;
+  font-weight: 1;
+
+
+
+}

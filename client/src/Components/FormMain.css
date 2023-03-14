@@ -1,0 +1,75 @@
+@font-face{
+    font-family: 'Designer';
+    src: url('../../public/Fonts/Designer.otf')
+}
+@font-face {
+    font-family: ComfoortaTiny;
+    src: url(../../public/Fonts/Comfortaa-Light.ttf);
+}
+
+@font-face {
+    font-family: ComfoortaMidi;
+    src: url(../../public/Fonts/Comfortaa-Regular.ttf);
+    
+}
+
+@font-face {
+    font-family: ComfoortaBold;
+    src: url("../../public/Fonts/Comfortaa-Bold.ttf");
+}
+
+.containerHeader{
+    width: 69%;
+    margin: 0 auto 0 auto;
+    display:block;
+    font-family: ComfoortaMidi;
+}
+
+.mainName, .mainEmail, .modalidade{
+    width:100%;
+
+}
+
+.modalidade{
+    padding-right: 2px; ;
+    width:100%;
+    cursor:pointer;
+    text-align: left;
+    font-family: ComfoortaBold;
+    color:#7a7a7a
+
+
+}
+.modalidade:active{
+    border:none;
+}
+.mainName, .mainEmail, .modalidade, .mainCourse, .mainPeriodo{
+    height:2.6rem;
+    background-color:#E2E8F0;
+    border:none;
+    border-radius:1.1rem;
+    padding-left:0.6rem;;
+    margin-top:0.8rem;
+}
+
+.mainPeriodo{
+    margin-left:auto;
+    width:40%;
+    padding-right:40px;
+}
+.mainCourse{
+    width:40%
+
+}
+
+.containerForm{
+    display:flex;
+    width:100%;
+    
+}
+
+input{
+    font-family: ComfoortaMidi;
+
+}
+
