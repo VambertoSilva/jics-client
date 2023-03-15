@@ -20,11 +20,30 @@ const options = {
         {value: 'sub', label: 'Subsequente'},
         {value: 'sup', label: 'Superior'},
     ],
-    periodos: []
+    periodos: [],
 }
+
 for (var i = 1  ; i <= 10; i++) {
     options.periodos.push({value: String(i), label: String(i)+'°'})
 }
+
+const styles = {
+    control: (baseStyles, state) => ({
+        ...baseStyles,
+        backgroundColor: '#E2E8F0',
+        color: '#7a7a7a',
+        borderRadius: '1.1rem',
+        border: 'none',
+        marginTop: '0.8rem',
+        fontFamily: 'ComfoortaMidi',
+    }),
+    menuList: (baseStyles, state) => ({
+        ...baseStyles,
+        backgroundColor: '#E2E8F0',
+        fontFamily: 'ComfoortaMidi'
+    })
+}
+
 
 const FormMain = (props) => {
 
@@ -59,44 +78,37 @@ const FormMain = (props) => {
         Volei: false,
         Futebol: false,
         Queimada: false,
-        Handebol: false,
         Tenis: false,
         Xadrez: false,
-        JustDance: false,
-        FIFA: false,
-        Corrida: false,
-        Salto: false,
-        Arremesso: false,
+        Badminton: false,
+        Domino: false,
+        JogosEle: false,
+        Atletismo: false,
     });
     const certo = {
         Titulo: 'O certo aqui',
         Volei: jogos.Volei,
         Futebol: jogos.Futebol,
         Queimada: jogos.Queimada,
-        Handebol: jogos.Handebol,
         Tenis: jogos.Tenis,
         Xadrez: jogos.Xadrez,
-        JustDance: jogos.JustDance,
-        FIFA: jogos.FIFA,
-        Corrida: jogos.Corrida,
-        Salto: jogos.Salto,
-        Arremesso: jogos.Arremesso,
+        Badminton: jogos.Badminton,
+        Domino: jogos.Domino,
+        JogosEle: jogos.JogosEle,
+        Atletismo: jogos.Atletismo,
     };
-    // console.log(certo);
 
     const addJogos = (objJogos) => {
         setjogos({
             Volei: objJogos.Volei,
             Futebol: objJogos.Futebol,
             Queimada: objJogos.Queimada,
-            Handebol: objJogos.Handebol,
             Tenis: objJogos.Tenis,
             Xadrez: objJogos.Xadrez,
-            JustDance: objJogos.Domino,
-            FIFA: objJogos.FIFA,
-            Corrida: objJogos.Corrida,
-            Salto: objJogos.Salto,
-            Arremesso: objJogos.Arremesso,
+            Badminton: objJogos.Badminton,
+            Domino: objJogos.Domino,
+            JogosEle: objJogos.JogosEle,
+            Atletismo: objJogos.Atletismo
         });
     };
 
@@ -115,20 +127,8 @@ const FormMain = (props) => {
                     options={dropdowns.curso.options}
                     className="mainCourse flexItem"
                     placeholder="Curso"
-                    styles={{
-                        control: (baseStyles, state) => ({
-                            ...baseStyles,
-                            backgroundColor: '#E2E8F0',
-                            color: '#7a7a7a',
-                            borderRadius: '1.1rem',
-                            border: 'none',
-                            marginTop: '0.8rem',
-                        }),
-                        menuList: (baseStyles, state) => ({
-                            ...baseStyles,
-                            backgroundColor: '#E2E8F0'
-                        })
-                    }
+                    styles={
+                        styles
                     }
                     hideSelectedOptions
                     />
@@ -136,20 +136,8 @@ const FormMain = (props) => {
                     defaultValue={dropdowns.modelo.selectedOption}
                     onChange={dropdowns.modelo.setSelectedOption}
                     options={dropdowns.modelo.options}
-                    styles={{
-                        control: (baseStyles, state) => ({
-                            ...baseStyles,
-                            backgroundColor: '#E2E8F0',
-                            color: '#7a7a7a',
-                            borderRadius: '1.1rem',
-                            border: 'none',
-                            marginTop: '0.8rem',
-                        }),
-                        menuList: (baseStyles, state) => ({
-                            ...baseStyles,
-                            backgroundColor: '#E2E8F0'
-                        })
-                    }
+                    styles={
+                        styles
                     }
                     hideSelectedOptions
                     className="mainModelo flexItem" placeholder='Modelo'/>
@@ -158,20 +146,8 @@ const FormMain = (props) => {
                     defaultValue={dropdowns.periodo.selectedOption}
                     onChange={dropdowns.periodo.setSelectedOption}
                     options={dropdowns.periodo.options}
-                    styles={{
-                        control: (baseStyles, state) => ({
-                            ...baseStyles,
-                            backgroundColor: '#E2E8F0',
-                            color: '#7a7a7a',
-                            borderRadius: '1.1rem',
-                            border: 'none',
-                            marginTop: '0.8rem',
-                        }),
-                        menuList: (baseStyles, state) => ({
-                            ...baseStyles,
-                            backgroundColor: '#E2E8F0'
-                        })
-                    }
+                    styles={
+                        styles
                     }
                     hideSelectedOptions
                     className="mainPeriodo flexItem" placeholder='Período'/>
@@ -179,20 +155,8 @@ const FormMain = (props) => {
                     defaultValue={dropdowns.sexo.selectedOption}
                     onChange={dropdowns.sexo.setSelectedOption}
                     options={dropdowns.sexo.options}
-                    styles={{
-                        control: (baseStyles, state) => ({
-                            ...baseStyles,
-                            backgroundColor: '#E2E8F0',
-                            color: '#7a7a7a',
-                            borderRadius: '1.1rem',
-                            border: 'none',
-                            marginTop: '0.8rem',
-                        }),
-                        menuList: (baseStyles, state) => ({
-                            ...baseStyles,
-                            backgroundColor: '#E2E8F0'
-                        })
-                    }
+                    styles={
+                        styles
                     }
                     hideSelectedOptions
                     className="mainSexo flexItem" placeholder='Sexo Biológico'/>

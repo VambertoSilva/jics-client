@@ -5,31 +5,34 @@ import './Volei.css';
 const Volei = () => {
     const [nomedadupla, setnomedadupla] = useState();
     const [nomedaquarteto, setnomequarteto] = useState();
+    
+    let clicked = true;
+    const [btnDupla, setDupla] = useState(clicked);
+    const [btnQuarteto, setQuarteto] = useState(clicked);
 
     const clickdupla = () => {
-        setnomedadupla(true);
+        setDupla(!btnDupla);
+        setnomedadupla(btnDupla);
     };
+
     const clickquarteto = () => {
-        setnomequarteto(true);
+        setQuarteto(!btnQuarteto);
+        setnomequarteto(btnQuarteto);
     };
+
     return (
         <div>
-            <h4 className="headervolei">Vôlei</h4>
+            <h1 className="header">Vôlei</h1>
             <div class="divider"></div>
-            <div className="sexo" onClick={clickdupla}>
-                <input type="radio" name="volei" value="Masculino" />
-                <label className="label">Masculino - dupla</label>
-                <input
-                    className="SecondInput"
-                    type="radio"
-                    name="volei"
-                    Value="Feminino"
-                />
-                <label className="label">Feminino - dupla</label>
-            </div>
-            <div onClick={clickquarteto}>
-                <input type="radio" value="Masculino" />
-                <label className="label">Volei - Quarteto</label>
+            <div className="voleidata">
+                <div>
+                    <input className="checkbox-round" type="checkbox" name="dupla" value="true" onClick={clickdupla}/>
+                    <label className="label">Dupla</label>
+                </div>
+                <div>
+                    <input className="checkbox-round" type="checkbox" name="quarteto" value="true" onClick={clickquarteto} />
+                    <label className="label">Quarteto</label>
+                </div>
             </div>
             {nomedadupla && <Input placeholder={'Matricula da dupla'} />}
             {nomedaquarteto && <Input placeholder={'Nome da Equipe'} />}
