@@ -1,53 +1,39 @@
 {
-  "name": "jics-server",
-  "version": "1.0.0",
-  "description": "Server for JICS",
-  "type": "module",
-  "main": "src/server.js",
-  "imports": {
-    "#routes/*": "./src/routes/*",
-    "#middlewares/*": "./src/middlewares/*",
-    "#controllers/*": "./src/controllers/*",
-    "#errors/*": "./src/errors/*",
-    "#utils/*": "./src/utils/*",
-    "#services/*": "./src/services/*"
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.7.0",
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "main": "src/server.js",
-    "dev": "nodemon src/server.js",
-    "lint": "eslint src --fix"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Gvinfinity/jics-server.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "keywords": [
-    "server",
-    "jics",
-    "sports",
-    "management"
-  ],
-  "private": true,
-  "author": "JICS Comission",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Gvinfinity/jics-server/issues"
-  },
-  "homepage": "https://github.com/Gvinfinity/jics-server#readme",
-  "devDependencies": {
-    "eslint": "^8.35.0",
-    "eslint-config-prettier": "^8.7.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "nodemon": "^2.0.21",
-    "prettier": "^2.8.4"
-  },
-  "dependencies": {
-    "@prisma/client": "^4.11.0",
-    "bcrypt": "^5.1.0",
-    "cookie-parser": "^1.4.6",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
