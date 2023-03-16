@@ -2,9 +2,75 @@ import React, { useState } from 'react';
 import './FormMain.css';
 import Modalidades from './Modalidades';
 import Volei from './InputsModalidades/Volei';
-import Jogos from '../Context/Jogos';
+import Select from 'react-select';
+
+const options = {
+    cursos: [
+        {value: 'meca', label: 'Mecatrônica'},
+        {value: 'seg', label: 'Segurança do Trabalho'},
+        {value: 'edif', label: 'Edificações'},
+        {value: 'eng', label: 'Engenharia Mecânica'},
+    ],
+    sexos: [
+        {value: 'man', label: 'Homem'},
+        {value: 'woman', label: 'Mulher'},
+    ],
+    modelos: [
+        {value: 'int', label: 'Integrado'},
+        {value: 'sub', label: 'Subsequente'},
+        {value: 'sup', label: 'Superior'},
+    ],
+    periodos: [],
+}
+
+for (var i = 1  ; i <= 10; i++) {
+    options.periodos.push({value: String(i), label: String(i)+'°'})
+}
+
+const styles = {
+    control: (baseStyles, state) => ({
+        ...baseStyles,
+        backgroundColor: '#E2E8F0',
+        color: '#7a7a7a',
+        borderRadius: '1.1rem',
+        border: 'none',
+        marginTop: '0.8rem',
+        fontFamily: 'ComfoortaMidi',
+    }),
+    menuList: (baseStyles, state) => ({
+        ...baseStyles,
+        backgroundColor: '#E2E8F0',
+        fontFamily: 'ComfoortaMidi'
+    })
+}
+
 
 const FormMain = (props) => {
+
+    const dropdowns = {
+        curso: {
+            selectedOption: false,
+            setSelectedOption: false,
+            options: options.cursos,
+        },
+        sexo: {
+            selectedOption: false,
+            setSelectedOption: false,
+            options: options.sexos,
+        },
+        modelo: {
+            selectedOption: false,
+            setSelectedOption: false,
+            options: options.modelos,
+        },
+        periodo: {
+            selectedOption: false,
+            setSelectedOption: false,
+            options: options.periodos,
+        },
+    }   
+    
+
     let clicked = false;
     const [btnModalidade, setModalidade] = useState(clicked);
     const [jogos, setjogos] = useState({
@@ -12,70 +78,97 @@ const FormMain = (props) => {
         Volei: false,
         Futebol: false,
         Queimada: false,
-        Handebol: false,
         Tenis: false,
         Xadrez: false,
-        JustDance: false,
-        FIFA: false,
-        Corrida: false,
-        Salto: false,
-        Arremesso: false,
+        Badminton: false,
+        Domino: false,
+        JogosEle: false,
+        Atletismo: false,
     });
     const certo = {
         Titulo: 'O certo aqui',
         Volei: jogos.Volei,
         Futebol: jogos.Futebol,
         Queimada: jogos.Queimada,
-        Handebol: jogos.Handebol,
         Tenis: jogos.Tenis,
         Xadrez: jogos.Xadrez,
-        JustDance: jogos.JustDance,
-        FIFA: jogos.FIFA,
-        Corrida: jogos.Corrida,
-        Salto: jogos.Salto,
-        Arremesso: jogos.Arremesso,
+        Badminton: jogos.Badminton,
+        Domino: jogos.Domino,
+        JogosEle: jogos.JogosEle,
+        Atletismo: jogos.Atletismo,
     };
-    // console.log(certo);
 
     const addJogos = (objJogos) => {
         setjogos({
             Volei: objJogos.Volei,
             Futebol: objJogos.Futebol,
             Queimada: objJogos.Queimada,
-            Handebol: objJogos.Handebol,
             Tenis: objJogos.Tenis,
             Xadrez: objJogos.Xadrez,
-            JustDance: objJogos.Domino,
-            FIFA: objJogos.FIFA,
-            Corrida: objJogos.Corrida,
-            Salto: objJogos.Salto,
-            Arremesso: objJogos.Arremesso,
+            Badminton: objJogos.Badminton,
+            Domino: objJogos.Domino,
+            JogosEle: objJogos.JogosEle,
+            Atletismo: objJogos.Atletismo
         });
     };
 
     const eventClick = (event) => {
-        if (btnModalidade) {
-            setModalidade(false);
-        } else {
-            setModalidade(true);
-        }
+        setModalidade(!btnModalidade)
     };
 
     return (
         <div className="containerHeader">
-            <input className="mainName" placeholder="Nome" />
-            <input className="mainEmail" placeholder="Email" />
+            <input className="mainName formField" placeholder="Nome" />
+            <input className="mainEmail formField" placeholder="Email" />
             <div className="containerForm">
-                <input className="mainCourse" placeholder="Curso" />
-                <input className="mainPeriodo" placeholder="Período" />
+                <Select 
+                    defaultValue={dropdowns.curso.selectedOption}
+                    onChange={dropdowns.curso.setSelectedOption}
+                    options={dropdowns.curso.options}
+                    className="mainCourse flexItem"
+                    placeholder="Curso"
+                    styles={
+                        styles
+                    }
+                    hideSelectedOptions
+                    />
+                <Select
+                    defaultValue={dropdowns.modelo.selectedOption}
+                    onChange={dropdowns.modelo.setSelectedOption}
+                    options={dropdowns.modelo.options}
+                    styles={
+                        styles
+                    }
+                    hideSelectedOptions
+                    className="mainModelo flexItem" placeholder='Modelo'/>
+                <div className='break'></div>
+                <Select
+                    defaultValue={dropdowns.periodo.selectedOption}
+                    onChange={dropdowns.periodo.setSelectedOption}
+                    options={dropdowns.periodo.options}
+                    styles={
+                        styles
+                    }
+                    hideSelectedOptions
+                    className="mainPeriodo flexItem" placeholder='Período'/>
+                <Select
+                    defaultValue={dropdowns.sexo.selectedOption}
+                    onChange={dropdowns.sexo.setSelectedOption}
+                    options={dropdowns.sexo.options}
+                    styles={
+                        styles
+                    }
+                    hideSelectedOptions
+                    className="mainSexo flexItem" placeholder='Sexo Biológico'/>
+
             </div>
             <button
                 onClick={eventClick}
-                className="modalidade"
-                placeholder="Modalidade"
+                className="modalidade formField"
+                placeholder="Modalidades"
                 type="button"
             >
-                Modalidade
+                Modalidades
             </button>
             <Modalidades show={btnModalidade} setar={addJogos} />
             {certo.Volei && <Volei />}
