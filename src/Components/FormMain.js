@@ -10,27 +10,73 @@ import Badminton from './InputsModalidades/Badminton';
 import Atletismo from './InputsModalidades/Atletismo';
 import Select from 'react-select';
 
+const dados = {
+    Nome: '',
+    Email: '',
+    Curso: '',
+    Periodo: '',
+    Modelo: '',
+    Sexo: '',
+    Modaldades: {
+        Volei: {
+            Dupla: false,
+            Quarteto: false,
+            NomeDaEquipe: '',
+        },
+
+        Futebol: {
+            Status: false,
+            NomeDaEquipe: '',
+        },
+        Queimada: {
+            Status: false,
+            NomeDaEquipe: '',
+        },
+        Tenis: {
+            Individual: false,
+            Dupla: false,
+            NomeDaDupla: '',
+        },
+        Domino: {
+            Status: false,
+            NomeDaDupla: '',
+        },
+        Atletismo: {
+            Corrida50m: false,
+            Corrida100m: false,
+            CorridaEmRevezamento: false,
+            SaltoEmDistancia: false,
+            SaltoEmAltura: false,
+            ArremessoDePeso: false,
+        },
+    },
+};
+
 const options = {
     cursos: [
-        {value: 'meca', label: 'Mecatrônica'},
-        {value: 'seg', label: 'Segurança do Trabalho'},
-        {value: 'edif', label: 'Edificações'},
-        {value: 'eng', label: 'Engenharia Mecânica'},
+        { name: 'Curso', value: 'meca', label: 'Mecatrônica' },
+        { name: 'Curso', value: 'seg', label: 'Segurança do Trabalho' },
+        { name: 'Curso', value: 'edif', label: 'Edificações' },
+        { name: 'Curso', value: 'eng', label: 'Engenharia Mecânica' },
     ],
     sexos: [
-        {value: 'man', label: 'Homem'},
-        {value: 'woman', label: 'Mulher'},
+        { name: 'Sexo', value: 'man', label: 'Homem' },
+        { name: 'Sexo', value: 'woman', label: 'Mulher' },
     ],
     modelos: [
-        {value: 'int', label: 'Integrado'},
-        {value: 'sub', label: 'Subsequente'},
-        {value: 'sup', label: 'Superior'},
+        { name: 'Modelo', value: 'int', label: 'Integrado' },
+        { name: 'Modelo', value: 'sub', label: 'Subsequente' },
+        { name: 'Modelo', value: 'sup', label: 'Superior' },
     ],
     periodos: [],
-}
+};
 
-for (var i = 1  ; i <= 10; i++) {
-    options.periodos.push({value: String(i), label: String(i)+'°'})
+for (var i = 1; i <= 10; i++) {
+    options.periodos.push({
+        name: 'Periodo',
+        value: String(i),
+        label: String(i) + '°',
+    });
 }
 
 const styles = {
@@ -46,13 +92,11 @@ const styles = {
     menuList: (baseStyles, state) => ({
         ...baseStyles,
         backgroundColor: '#E2E8F0',
-        fontFamily: 'ComfoortaMidi'
-    })
-}
-
+        fontFamily: 'ComfoortaMidi',
+    }),
+};
 
 const FormMain = (props) => {
-
     const dropdowns = {
         curso: {
             selectedOption: false,
@@ -74,8 +118,7 @@ const FormMain = (props) => {
             setSelectedOption: false,
             options: options.periodos,
         },
-    }   
-    
+    };
 
     let clicked = false;
     const [btnModalidade, setModalidade] = useState(clicked);
@@ -114,59 +157,76 @@ const FormMain = (props) => {
             Badminton: objJogos.Badminton,
             Domino: objJogos.Domino,
             JogosEle: objJogos.JogosEle,
-            Atletismo: objJogos.Atletismo
+            Atletismo: objJogos.Atletismo,
         });
     };
 
+    const save = (event) => {
+        const { name, value } = event.target || event;
+        dados[name] = value;
+
+        console.log(dados);
+    };
+    const event = (event) => {
+        console.log(event);
+    };
+
     const eventClick = (event) => {
-        setModalidade(!btnModalidade)
+        setModalidade(!btnModalidade);
     };
 
     return (
-        <div className="containerHeader">
-            <input className="mainName formField" placeholder="Nome" />
-            <input className="mainEmail formField" placeholder="Email" />
+        <form className="containerHeader">
+            <input
+                className="mainName formField"
+                placeholder="Nome"
+                onChange={save}
+                name="Nome"
+            />
+            <input
+                className="mainEmail formField"
+                placeholder="Email"
+                onChange={save}
+                name="Email"
+            />
             <div className="containerForm">
-                <Select 
+                <Select
                     defaultValue={dropdowns.curso.selectedOption}
-                    onChange={dropdowns.curso.setSelectedOption}
+                    onChange={(dropdowns.curso.setSelectedOption, save)}
                     options={dropdowns.curso.options}
                     className="mainCourse flexItem"
                     placeholder="Curso"
-                    styles={
-                        styles
-                    }
+                    styles={styles}
                     hideSelectedOptions
-                    />
+                />
                 <Select
                     defaultValue={dropdowns.modelo.selectedOption}
-                    onChange={dropdowns.modelo.setSelectedOption}
+                    onChange={(dropdowns.modelo.setSelectedOption, save)}
                     options={dropdowns.modelo.options}
-                    styles={
-                        styles
-                    }
+                    styles={styles}
                     hideSelectedOptions
-                    className="mainModelo flexItem" placeholder='Modelo'/>
-                <div className='break'></div>
+                    className="mainModelo flexItem"
+                    placeholder="Modelo"
+                />
+                <div className="break"></div>
                 <Select
                     defaultValue={dropdowns.periodo.selectedOption}
-                    onChange={dropdowns.periodo.setSelectedOption}
+                    onChange={(dropdowns.periodo.setSelectedOption, save)}
                     options={dropdowns.periodo.options}
-                    styles={
-                        styles
-                    }
+                    styles={styles}
                     hideSelectedOptions
-                    className="mainPeriodo flexItem" placeholder='Período'/>
+                    className="mainPeriodo flexItem"
+                    placeholder="Período"
+                />
                 <Select
                     defaultValue={dropdowns.sexo.selectedOption}
-                    onChange={dropdowns.sexo.setSelectedOption}
+                    onChange={(dropdowns.sexo.setSelectedOption, save)}
                     options={dropdowns.sexo.options}
-                    styles={
-                        styles
-                    }
+                    styles={styles}
                     hideSelectedOptions
-                    className="mainSexo flexItem" placeholder='Sexo Biológico'/>
-
+                    className="mainSexo flexItem"
+                    placeholder="Sexo Biológico"
+                />
             </div>
             <button
                 onClick={eventClick}
@@ -184,7 +244,10 @@ const FormMain = (props) => {
             {certo.Domino && <Domino />}
             {certo.Atletismo && <Atletismo />}
             {certo.Badminton && <Badminton />}
-        </div>
+            <button type="submit" className="submit">
+                Concluir
+            </button>
+        </form>
     );
 };
 

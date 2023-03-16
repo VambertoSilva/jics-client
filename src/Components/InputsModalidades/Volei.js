@@ -21,16 +21,28 @@ const Volei = () => {
     };
 
     return (
-        <div>
+        <div className="volei">
             <h1 className="header">Vôlei</h1>
             <div class="divider"></div>
             <div className="voleidata">
                 <div>
-                    <input className="checkbox-round" type="checkbox" name="dupla" value="true" onClick={clickdupla}/>
+                    <input
+                        className="checkbox-round"
+                        type="checkbox"
+                        name="dupla"
+                        value="true"
+                        onClick={clickdupla}
+                    />
                     <label className="label">Dupla</label>
                 </div>
                 <div>
-                    <input className="checkbox-round" type="checkbox" name="quarteto" value="true" onClick={clickquarteto} />
+                    <input
+                        className="checkbox-round"
+                        type="checkbox"
+                        name="quarteto"
+                        value="true"
+                        onClick={clickquarteto}
+                    />
                     <label className="label">Quarteto</label>
                 </div>
             </div>

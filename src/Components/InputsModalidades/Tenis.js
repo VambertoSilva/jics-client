@@ -19,16 +19,28 @@ const Tenis = () => {
     };
 
     return (
-        <div>
+        <div className="tenis">
             <h1 className="header">Tênis de Mesa</h1>
             <div class="divider"></div>
             <div className="tenisdata">
                 <div>
-                    <input className="checkbox-round" type="checkbox" name="individual" value="true" onClick={clickindividual}/>
+                    <input
+                        className="checkbox-round"
+                        type="checkbox"
+                        name="individual"
+                        value="true"
+                        onClick={clickindividual}
+                    />
                     <label className="label">Individual</label>
                 </div>
                 <div>
-                    <input className="checkbox-round" type="checkbox" name="dupla" value="true" onClick={clickdupla} />
+                    <input
+                        className="checkbox-round"
+                        type="checkbox"
+                        name="dupla"
+                        value="true"
+                        onClick={clickdupla}
+                    />
                     <label className="label">Dupla</label>
                 </div>
             </div>

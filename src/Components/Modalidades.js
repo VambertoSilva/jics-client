@@ -24,48 +24,47 @@ const Modalidades = (props) => {
         setFutebol(!stateFutebol);
         stateFutebol = !stateFutebol;
 
-        // props.setar({ Futebol: stateFutebol });
         enviar();
     };
 
     const clickQueimada = () => {
         setQueimada(!stateQueimada);
         stateQueimada = !stateQueimada;
-        // props.setar({ Queimada: stateQueimada });
+
         enviar();
     };
 
     const clickTenis = () => {
         setTenis(!stateTenis);
         stateTenis = !stateTenis;
-        // props.setar({ Tenis: stateTenis });
+
         enviar();
     };
 
     const clickXadrez = () => {
         setXadrez(!stateXadrez);
         stateXadrez = !stateXadrez;
-        // props.setar({ Xadrez: stateXadrez });
+
         enviar();
     };
 
     const clickDomino = () => {
         setDomino(!stateDomino);
         stateDomino = !stateDomino;
-        // props.setar({ Domino: stateDomino });
+
         enviar();
     };
 
     const clickJogosEle = () => {
         setJogosEle(!stateJogosEle);
         stateJogosEle = !stateJogosEle;
-        // props.setar({ JogosEle: stateJogosEle });
+
         enviar();
     };
     const clickAtletismo = () => {
         setAtletismo(!stateAtletismo);
         stateAtletismo = !stateAtletismo;
-        // props.setar({ Corrida: stateCorrida });
+
         enviar();
     };
     const clickBadminton = () => {
