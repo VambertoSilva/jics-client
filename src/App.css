@@ -3,10 +3,14 @@
   src: url("../public/Fonts/Designer.otf");
 }
 
+<<<<<<< HEAD
 
 
 @media only screen and (min-width: 1024px) {
   .container{
+=======
+.container{
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
   width:80%;
   min-height:80vh;
   margin: 3rem auto 3rem auto;
@@ -34,6 +38,7 @@
   height: 10em;
   display: block;
   margin: 0 auto;
+<<<<<<< HEAD
 }
 
 }
@@ -82,3 +87,6 @@
 }
 
 }
+=======
+}
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 @font-face {
     font-family: 'Designer';
     src: url('../../public/Fonts/Designer.otf');
+=======
+@font-face{
+    font-family: 'Designer';
+    src: url('../../public/Fonts/Designer.otf')
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
 }
 @font-face {
     font-family: ComfoortaTiny;
@@ -10,21 +16,33 @@
 @font-face {
     font-family: ComfoortaMidi;
     src: url(../../public/Fonts/Comfortaa-Regular.ttf);
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
 }
 
 @font-face {
     font-family: ComfoortaBold;
+<<<<<<< HEAD
     src: url('../../public/Fonts/Comfortaa-Bold.ttf');
 }
 
 @media only screen and (min-width: 1024px) {
 .containerHeader {
+=======
+    src: url("../../public/Fonts/Comfortaa-Bold.ttf");
+}
+
+.containerHeader{
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
     width: 69%;
     margin: 0 auto 0 auto;
     display: block;
     font-family: ComfoortaMidi;
 }
 
+<<<<<<< HEAD
 .mainName,
 .mainEmail,
 .modalidade {
@@ -52,6 +70,33 @@
     border-radius: 1.1rem;
     padding-left: 0.6rem;
     margin-top: 0.8rem;
+=======
+.mainName, .mainEmail, .modalidade{
+    width:100%;
+}
+
+.modalidade{
+    padding-right: 2px;
+    width:100%;
+    cursor:pointer;
+    text-align: left;
+    font-family: ComfoortaBold;
+    color:#7a7a7a
+}
+
+.modalidade:active{
+    border:none;
+}
+
+.formField{
+    box-sizing: inherit;
+    height:2.6rem;
+    background-color:#E2E8F0;
+    border:none;
+    border-radius:1.1rem;
+    padding-left:0.6rem;;
+    margin-top:0.8rem;
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
 }
 
 .break {
@@ -60,6 +105,7 @@
 }
 
 .flexItem {
+<<<<<<< HEAD
     width: 45%;
 }
 
@@ -67,11 +113,20 @@
     display: flex;
     width: 100%;
 
+=======
+    width: 45%
+}
+
+.containerForm{
+    display: flex;
+    width:100%;
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
     justify-content: space-between;
     box-sizing: inherit;
     flex-wrap: wrap;
 }
 
+<<<<<<< HEAD
 input {
     font-family: ComfoortaMidi;
 }
@@ -189,3 +244,10 @@ input {
 
 @media only screen and (min-width: 1024px) {}
 @media only screen and (min-width: 320px) and (max-width: 480px) {}
+=======
+
+input{
+    font-family: ComfoortaMidi;
+}
+
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec

@@ -24,47 +24,75 @@ const Modalidades = (props) => {
         setFutebol(!stateFutebol);
         stateFutebol = !stateFutebol;
 
+<<<<<<< HEAD
+=======
+        // props.setar({ Futebol: stateFutebol });
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
         enviar();
     };
 
     const clickQueimada = () => {
         setQueimada(!stateQueimada);
         stateQueimada = !stateQueimada;
+<<<<<<< HEAD
 
+=======
+        // props.setar({ Queimada: stateQueimada });
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
         enviar();
     };
 
     const clickTenis = () => {
         setTenis(!stateTenis);
         stateTenis = !stateTenis;
+<<<<<<< HEAD
 
+=======
+        // props.setar({ Tenis: stateTenis });
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
         enviar();
     };
 
     const clickXadrez = () => {
         setXadrez(!stateXadrez);
         stateXadrez = !stateXadrez;
+<<<<<<< HEAD
 
+=======
+        // props.setar({ Xadrez: stateXadrez });
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
         enviar();
     };
 
     const clickDomino = () => {
         setDomino(!stateDomino);
         stateDomino = !stateDomino;
+<<<<<<< HEAD
 
+=======
+        // props.setar({ Domino: stateDomino });
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
         enviar();
     };
 
     const clickJogosEle = () => {
         setJogosEle(!stateJogosEle);
         stateJogosEle = !stateJogosEle;
+<<<<<<< HEAD
 
+=======
+        // props.setar({ JogosEle: stateJogosEle });
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
         enviar();
     };
     const clickAtletismo = () => {
         setAtletismo(!stateAtletismo);
         stateAtletismo = !stateAtletismo;
+<<<<<<< HEAD
 
+=======
+        // props.setar({ Corrida: stateCorrida });
+>>>>>>> 36918eb7669d5f9aaa56a043a5795f7b9900ccec
         enviar();
     };
     const clickBadminton = () => {
