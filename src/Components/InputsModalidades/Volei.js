@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Input from '../Input';
 import './Volei.css';
+import { DataContext } from '../FormMain';
+// console.log(DataContext);
 
 const Volei = () => {
     const [nomedadupla, setnomedadupla] = useState();
     const [nomedaquarteto, setnomequarteto] = useState();
-    
+
     let clicked = true;
     const [btnDupla, setDupla] = useState(clicked);
     const [btnQuarteto, setQuarteto] = useState(clicked);
@@ -13,11 +15,17 @@ const Volei = () => {
     const clickdupla = () => {
         setDupla(!btnDupla);
         setnomedadupla(btnDupla);
+        // console.log(data);
     };
 
     const clickquarteto = () => {
         setQuarteto(!btnQuarteto);
         setnomequarteto(btnQuarteto);
+        DataContext._currentValue({
+            Modalidade: 'Volei',
+            SubModalidade: 'Quarteto',
+            Valor: true,
+        });
     };
 
     return (

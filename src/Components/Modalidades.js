@@ -86,18 +86,18 @@ const Modalidades = (props) => {
                 Atletismo: stateAtletismo,
                 Badminton: stateBadminton,
             });
-            console.log({
-                titulo: 'o certo',
-                Volei: stateVolei,
-                Futebol: stateFutebol,
-                Queimada: stateQueimada,
-                Tenis: stateTenis,
-                Xadrez: stateXadrez,
-                Domino: stateDomino,
-                JogosEle: stateJogosEle,
-                Atletismo: stateAtletismo,
-                Badminton: stateBadminton,
-            });
+            // console.log({
+            //     titulo: 'o certo',
+            //     Volei: stateVolei,
+            //     Futebol: stateFutebol,
+            //     Queimada: stateQueimada,
+            //     Tenis: stateTenis,
+            //     Xadrez: stateXadrez,
+            //     Domino: stateDomino,
+            //     JogosEle: stateJogosEle,
+            //     Atletismo: stateAtletismo,
+            //     Badminton: stateBadminton,
+            // });
         }, 200);
     };
 
