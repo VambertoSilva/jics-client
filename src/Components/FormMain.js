@@ -8,6 +8,7 @@ import Tenis from './InputsModalidades/Tenis';
 import Domino from './InputsModalidades/Domino';
 import Badminton from './InputsModalidades/Badminton';
 import Atletismo from './InputsModalidades/Atletismo';
+import JogosEle from './InputsModalidades/JogosEle';
 import Select from 'react-select';
 let Data = 'Sem dado';
 
@@ -41,6 +42,7 @@ const dados = {
             Dupla: false,
             NomeDaDupla: '',
         },
+        Xadrez: false,
 
         Domino: {
             Dupla: false,
@@ -61,6 +63,11 @@ const dados = {
             SaltoDistancia: false,
             SaltoAltura: false,
             Arremesso: false,
+        },
+        Badminton: {
+            Individual: false,
+            Dupla: false,
+            NomeDaDupla: '',
         },
     },
 };
@@ -112,9 +119,6 @@ const styles = {
 export const DataContext = createContext((newData) => {
     const { Modalidade, SubModalidade, Valor } = newData;
     dados.Modalidades[Modalidade][SubModalidade] = Valor;
-    console.log(Modalidade);
-    console.log(SubModalidade);
-    console.log(dados);
 });
 
 const FormMain = (props) => {
@@ -185,12 +189,19 @@ const FormMain = (props) => {
     const save = (event) => {
         const { name, value } = event.target || event;
         dados[name] = value;
-
         // console.log(dados);
     };
 
     const eventClick = (event) => {
         setModalidade(!btnModalidade);
+        dados.Modalidades.Futebol.Equipe = certo.Futebol;
+        dados.Modalidades.Queimada.Equipe = certo.Queimada;
+        dados.Modalidades.Xadrez = certo.Xadrez;
+        dados.Modalidades.Domino.Dupla = certo.Domino;
+    };
+
+    const submit = () => {
+        console.log(dados);
     };
 
     return (
@@ -261,9 +272,10 @@ const FormMain = (props) => {
                 {certo.Queimada && <Queimada />}
                 {certo.Tenis && <Tenis />}
                 {certo.Domino && <Domino />}
+                {certo.JogosEle && <JogosEle />}
                 {certo.Atletismo && <Atletismo />}
                 {certo.Badminton && <Badminton />}
-                <button type="submit" className="submit">
+                <button type="button" className="submit" onClick={submit}>
                     Concluir
                 </button>
             </form>
