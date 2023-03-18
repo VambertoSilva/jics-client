@@ -1,9 +1,11 @@
 .header{
-margin-top:2rem;
+margin-top:10rem;
 margin-bottom:0.4rem;
 font-size: 2rem;
 text-align: center;
 }
+
+
 
 .divider{
     height:1px;
@@ -38,4 +40,8 @@ text-align: center;
 .voleidata input[type="checkbox"]:checked {
     background-color: #b3ccee;
     border-color: #b3ccee;
+}
+
+.volei{
+    margin-top:4rem;
 }
